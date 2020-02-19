@@ -1,6 +1,6 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://tldrlegal.com/license/mit-license#summary) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/stutya/ionic)
 
-# Build APK for Ionic Apps from Gitlab
+# Build APK for Ionic 1/2/3/4 Cordova App from Gitlab
 
 1. Create a .gitlab-ci.yml similar to the following:
 ```
