@@ -1,2 +1,30 @@
-# ionic3-build-docker
-Build APK for Ionic 3 Cordova Apps
+# Build APK for Ionic Apps from Gitlab
+
+1. Create a .gitlab-ci.yml similar to the following:
+```
+image: stutya/ionic:latest
+
+stages:
+  - deploy
+
+cache:
+  untracked: true
+  key: "$CI_PROJECT_ID"
+  paths:
+    - node_modules/
+
+build_android:
+  stage: deploy
+  only:
+    - master
+    // - <another-branch> // Put applicable branches here.
+  script:
+    - npm i
+    - ionic cordova platform rm android
+    - ionic cordova platform add android
+    - ionic cordova build android
+  artifacts:
+    paths:
+      - /builds/
+```
+It should build the APK and will be available to download.
