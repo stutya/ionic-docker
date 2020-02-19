@@ -2,7 +2,7 @@ FROM ubuntu:xenial
 
 LABEL MAINTAINER="Anshuman Stutya <anshuman@stutya.com>"
 
-ARG NODEJS_VERSION="10"
+ARG NODEJS_VERSION="12"
 ARG IONIC_VERSION="5.4.16"
 ARG ANDROID_SDK_VERSION="4333796"
 ARG ANDROID_HOME="/opt/android-sdk"
