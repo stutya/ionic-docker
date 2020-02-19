@@ -8,6 +8,10 @@ ARG ANDROID_SDK_VERSION="4333796"
 ARG ANDROID_HOME="/opt/android-sdk"
 ARG ANDROID_BUILD_TOOLS_VERSION="28.0.3"
 
+RUN mkdir /.npm-global
+ENV PATH=/.npm-global/bin:$PATH
+ENV NPM_CONFIG_PREFIX=/.npm-global
+
 ENV ANDROID_HOME "${ANDROID_HOME}"
 
 RUN apt-get update \
