@@ -8,10 +8,6 @@ ARG ANDROID_SDK_VERSION="4333796"
 ARG ANDROID_HOME="/opt/android-sdk"
 ARG ANDROID_BUILD_TOOLS_VERSION="28.0.3"
 
-RUN mkdir /.npm-global
-ENV PATH=/.npm-global/bin:$PATH
-ENV NPM_CONFIG_PREFIX=/.npm-global
-
 ENV ANDROID_HOME "${ANDROID_HOME}"
 
 RUN apt-get update \
@@ -26,7 +22,7 @@ RUN apt-get update \
     && curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION}.x | bash - \
     && apt-get update \
     && apt-get install -y nodejs \
-    && npm install -g cordova cordova-res ionic@${IONIC_VERSION} \
+    && npm install -g cordova ionic@${IONIC_VERSION} \
     && cd /tmp \
     && curl -fSLk https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip -o sdk-tools-linux-${ANDROID_SDK_VERSION}.zip \
     && unzip sdk-tools-linux-${ANDROID_SDK_VERSION}.zip \
