@@ -25,10 +25,9 @@ build_android:
     - ionic cordova platform rm android
     - ionic cordova platform add android
     - ionic cordova build android
-    - cp platforms/android/app/build/outputs/apk/*/*.apk ./app.apk
   artifacts:
     paths:
-      - app.apk
+      - /build
 ```
 It should build the APK and will be available to download.
 
@@ -57,9 +56,8 @@ build_android:
     - npm run build
     - npx cap sync android
     - cd android/ && ./gradlew assembleRelease
-    - cp app/build/outputs/apk/*/*.apk ./app.apk
   artifacts:
     paths:
-      - app.apk
+      - /build
 ```
 It should build the APK and will be available to download.
